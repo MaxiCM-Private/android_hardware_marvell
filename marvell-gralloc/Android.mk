@@ -48,7 +48,7 @@ LOCAL_C_INCLUDES := \
 
 # See hardware/libhardware/modules/README.android to see how this is named.
 
-LOCAL_MODULE := gralloc.xo4
+LOCAL_MODULE := gralloc.pxa1088
 
 # With front buffer rendering, gralloc always provides the same buffer 
 # when GRALLOC_USAGE_HW_FB. Obviously there is no synchronization with the display.
@@ -58,18 +58,14 @@ LOCAL_CFLAGS := \
 	-DDISABLE_FRONT_BUFFER \
 	-DFRAMEBUFFER_PIXEL_FORMAT=$(FRAMEBUFFER_PIXEL_FORMAT)
 
-LOCAL_C_INCLUDES += vendor/marvell/generic/displayservice/include \
-                    vendor/marvell/generic/graphics/user/include \
-                    vendor/marvell/generic/graphics/user/user/hal/inc \
-                    vendor/marvell/generic/graphics/user/user/hal/user \
-                    vendor/marvell/generic/graphics/user/user/hal/os/linux/user \
-                    vendor/marvell/generic/graphics/user
+LOCAL_C_INCLUDES += hardware/marvell/displayservice/include \
+                    hardware/marvell/graphics/include
 
 LOCAL_SHARED_LIBRARIES += libgcu libutils libbinder
 
 ifeq ($(strip $(BOARD_ENABLE_MULTI_DISPLAYS)),true)
     LOCAL_SHARED_LIBRARIES += libdisplaymodel
-    LOCAL_C_INCLUDES += vendor/marvell/generic/displayservice
+    LOCAL_C_INCLUDES += hardware/marvell/displayservice
     LOCAL_CFLAGS += -DMRVL_SUPPORT_DISPLAY_MODEL=1
 endif
 

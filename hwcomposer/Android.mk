@@ -81,7 +81,7 @@ LOCAL_SHARED_LIBRARIES += libbinder \
                           libsync
 endif
 
-LOCAL_MODULE := hwcomposer.pxa1088
+LOCAL_MODULE := hwcomposer.mrvl
 
 LOCAL_CFLAGS:= -DLOG_TAG=\"HWComposerMarvell\"
 

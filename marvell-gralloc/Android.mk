@@ -48,7 +48,7 @@ LOCAL_C_INCLUDES := \
 
 # See hardware/libhardware/modules/README.android to see how this is named.
 
-LOCAL_MODULE := gralloc.pxa1088
+LOCAL_MODULE := gralloc.mrvl
 
 # With front buffer rendering, gralloc always provides the same buffer 
 # when GRALLOC_USAGE_HW_FB. Obviously there is no synchronization with the display.
